@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Edit Show or Movie</h2>
+    <form method="POST" class="form-group">
+        <label for="name">Show/Movie Name:</label>
+        <input type="text" id="name" name="name" class="form-control" value="{{ show.name }}" required>
+        <label for="status">Status:</label>
+        <select id="status" name="status" class="form-control" required>
+            <option value="Watching" {% if show.status == 'Watching' %}selected{% endif %}>Watching</option>
+            <option value="Completed" {% if show.status == 'Completed' %}selected{% endif %}>Completed</option>
+            <option value="Plan to Watch" {% if show.status == 'Plan to Watch' %}selected{% endif %}>Plan to Watch</option>
+        </select>
+        <button type="submit" class="btn btn-primary mt-3">Update</button>
+    </form>
+{% endblock %}

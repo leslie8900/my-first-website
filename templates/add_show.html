@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Add a Show or Movie</h2>
+    <form method="POST" class="form-group">
+        <label for="name">Show/Movie Name:</label>
+        <input type="text" id="name" name="name" class="form-control" required>
+        <label for="status">Status:</label>
+        <select id="status" name="status" class="form-control" required>
+            <option value="Watching">Watching</option>
+            <option value="Completed">Completed</option>
+            <option value="Plan to Watch">Plan to Watch</option>
+        </select>
+        <button type="submit" class="btn btn-primary mt-3">Add</button>
+    </form>
+{% endblock %}

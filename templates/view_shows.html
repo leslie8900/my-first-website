@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Your Shows and Movies</h2>
+    {% if shows %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for show in shows %}
+                    <tr>
+                        <td>{{ show.name }}</td>
+                        <td>{{ show.status }}</td>
+                        <td>
+                            <a href="/edit/{{ show.id }}" class="btn btn-warning btn-sm">Edit</a>
+                            <a href="/delete/{{ show.id }}" class="btn btn-danger btn-sm">Delete</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No shows added yet.</p>
+    {% endif %}
+{% endblock %}
